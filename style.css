@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --primary-color: #036388;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: #032541;
+  padding: 0 3rem;
+}
+.search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: #fff;
+}
+
+.search::placeholder {
+  color: rgb(255, 255, 255);
+  opacity: 0.5;
+}
+
+.search:focus {
+  box-shadow: none;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+#tags {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto 0px;
+}
+
+.tag {
+  color: white;
+  padding: 10px 15px;
+  background-color: orange;
+  border-radius: 50px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.no-result {
+  margin: 2rem;
+  color: white;
+}
+.highlight {
+  background: red;
+}
+.movie {
+  width: 300px;
+  margin: 1rem;
+  background-color: #032541;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie img {
+  width: 100%;
+  border: 10px solid white;
+}
+
+.movie-info {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.5px;
+  margin: 0.5rem;
+}
+
+.movie-info span {
+  background-color: rgb(19, 42, 49);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.movie-info span.green {
+  color: lightgreen;
+}
+.movie-info span.orange {
+  color: orange;
+}
+.movie-info span.red {
+  color: crimson;
+}
+
+/* .date {
+  color: rgba(255, 255, 255, 0.788);
+  background-color: #20b2ab80;
+  display: inline-flex;
+  padding:5px 15px;
+  margin-bottom: 0;
+  font-size: 22px;
+  border-radius: 20px;
+} */
+
+.overview {
+  background: rgb(128, 126, 126);
+  color: white;
+  border-radius: 5px 5px 0 0;
+  padding: 1rem;
+  overflow-y: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(101%);
+  transition: transform 0.4s ease-in;
+}
+
+.movie:hover .overview {
+  transform: translateY(0%);
+}
+
+.pagination {
+  max-width: 500px;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #032541;
+  margin-bottom: 25px;
+}
+
+.page {
+  padding: 10px;
+  cursor: pointer;
+}
+.page.disabled {
+  cursor: not-allowed;
+  color: grey;
+}
+.current {
+  padding: 8px 15px;
+  border-radius: 50%;
+  border: 3px solid orange;
+  font-weight: 600;
+}
+
+#pagination ul {
+  display: flex;
+  background: #fff;
+  padding: 4px;
+  border-radius: 50px;
+}
+
+#pagination ul li {
+  color: #20b2aa;
+  list-style: none;
+  line-height: 45px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+#pagination ul li.num {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  margin: 0 3px;
+}
+
+#pagination ul li.dots {
+  font-size: 25px;
+  cursor: default;
+}
+
+#pagination ul li.btn {
+  padding: 0 20px;
+}
+
+#pagination ul li.btn-prev {
+  border-radius: 25px 5px 5px 25px;
+}
+
+#pagination ul li.btn-next {
+  border-radius: 5px 25px 25px 5px;
+}
+
+#pagination ul li.active,
+#pagination ul li.num:hover,
+#pagination ul li.btn:hover {
+  color: #fff;
+  background: #20b2aa;
+}
+
+/* Vertical Bar Preloader*/
+.loader {
+  background: #222;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+}
+
+.loader div {
+  background: #fff;
+  width: 20px;
+  height: 35px;
+  margin-left: 10px;
+  animation: loader 0.8s infinite;
+}
+
+@keyframes loader {
+  50% {
+    /* height: 80px; */
+  }
+}
+
+.loader div:nth-child(1) {
+  background: #ff9f1a;
+  animation-delay: -0.4s;
+}
+.loader div:nth-child(2) {
+  background: #fed330;
+  animation-delay: -0.2s;
+}
+.loader div:nth-child(3) {
+  background: #fffa65;
+  animation-delay: 0s;
+}
+/* Vertical Bar Preloader*/
